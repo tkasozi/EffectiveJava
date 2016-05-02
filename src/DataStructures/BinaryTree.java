@@ -9,6 +9,8 @@
 package DataStructures;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.Stack;
 
 /**
  *
@@ -22,6 +24,14 @@ public class BinaryTree<T extends Comparable<T>> implements Iterable<T> {
     BinaryTree<T> rightBranch;
 
     T data;
+
+    public BinaryTree<T> getChildren() {
+        return (leftBranch == null) ? this.rightBranch : this.leftBranch;
+    }
+
+    public T getElement() {
+        return this.data;
+    }
 
     public BinaryTree(T data) {
 
@@ -98,41 +108,39 @@ public class BinaryTree<T extends Comparable<T>> implements Iterable<T> {
     @Override
     public Iterator<T> iterator() {
 
-        return new Iterate(this);
+        return new TreeIterator(this);
     }
 
-    private class Iterate implements Iterator<T> {
+    public class TreeIterator<T extends Comparable<T>> implements Iterator<T> {
 
-        private BinaryTree<T> tree, left, right;
-//        private final T root;
+        private Stack<BinaryTree<T>> s = new Stack<>();
 
-        public Iterate(BinaryTree<T> T) {
-            this.tree = T.parent;
-        }
-
-        @Override
-        public T next() {
-            return this.tree.data;
-        }
-
-        @Override
-        public void remove() {
-
+        public TreeIterator(BinaryTree<T> n) {
+            s.push(n);
         }
 
         @Override
         public boolean hasNext() {
-            return !(this.tree == null);
+            return !s.empty();
         }
 
+        @Override
+        public T next() {
+            if (!hasNext()) {
+
+                throw new NoSuchElementException();
+            }
+            BinaryTree<T> n = s.pop();
+
+            for (Object ch : n.getChildren()) {
+                s.push((BinaryTree<T>) ch);
+            }
+            return n.getElement();
+        }
     }
 
     public void print() {
-        Iterator<T> iter = this.leftBranch.iterator();
 
-        while (iter.hasNext()) {
-            System.out.print(iter.next() + " ");
-        }
     }
 
 }
