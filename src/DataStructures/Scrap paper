@@ -1,0 +1,15 @@
+    this.left = (this.left.leftBranch == null)
+                    ? this.left.parent.leftBranch : this.left.leftBranch;
+ 
+            //System.out.println(" LHS tree addr: " + this.left.data);
+            this.right = (this.right.rightBranch == null)
+                    ? this.right.parent.rightBranch : this.right.rightBranch;
+
+            this.tree = (this.left == null)
+                    ? this.tree.parent : (this.left != null)// && this.right == null
+                            ? this.left.leftBranch : (this.right != null)//this.left == null &&
+                                    ? this.right : null;
+
+            System.out.println(this.left + " " + this.tree + " " + this.right.parent.data + " ");
+
+            return !(this.tree == null);
