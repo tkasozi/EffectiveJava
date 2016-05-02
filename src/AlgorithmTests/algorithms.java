@@ -21,25 +21,13 @@ public class algorithms {
 
         binaryTree.insert(1);
         binaryTree.insert(5);
+        binaryTree.insert(2);
+        binaryTree.insert(3);
 
         //binaryTree.traverse(binaryTree, true);
-        
-        binaryTree.print();
-
-    }
-
-    public static void main_(String[] args) {
-        System.out.println(Arrays.toString(reverse(new int[]{1, 2, 34, 56, 7, 89, 90, 0, 1100})));
-    }
-
-    //O(n)
-    static int[] reverse(int[] a) {
-        int[] temp = new int[a.length];
-
-        for (int i = 0, j = a.length - 1; i < temp.length; i++, j--) {
-            temp[i] = a[j];
+        //binaryTree.print();
+        for (Integer T : binaryTree) {
+            System.out.print(T + " ");
         }
-
-        return temp;
     }
 }

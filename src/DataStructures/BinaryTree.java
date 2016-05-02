@@ -25,8 +25,16 @@ public class BinaryTree<T extends Comparable<T>> implements Iterable<T> {
 
     T data;
 
+    /**
+     *
+     * @return
+     */
     public BinaryTree<T> getChildren() {
-        return (leftBranch == null) ? this.rightBranch : this.leftBranch;
+        return (this.leftBranch == null) ? this.rightBranch : this.leftBranch;
+    }
+
+    public BinaryTree<T> getChildren_() {
+        return (this.rightBranch == null) ? this.leftBranch : this.rightBranch;
     }
 
     public T getElement() {
@@ -107,7 +115,6 @@ public class BinaryTree<T extends Comparable<T>> implements Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
-
         return new TreeIterator(this);
     }
 
@@ -132,15 +139,11 @@ public class BinaryTree<T extends Comparable<T>> implements Iterable<T> {
             }
             BinaryTree<T> n = s.pop();
 
-            for (Object ch : n.getChildren()) {
-                s.push((BinaryTree<T>) ch);
+            if (n.getChildren() != null) {
+                s.push(n.getChildren());
             }
+
             return n.getElement();
         }
     }
-
-    public void print() {
-
-    }
-
 }

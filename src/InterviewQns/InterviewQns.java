@@ -22,7 +22,17 @@ public class InterviewQns {
         watch = new Stopwatch();
     }
 
-    
+    //O(n) reverse array
+    static int[] reverse(int[] a) {
+        int[] temp = new int[a.length];
+
+        for (int i = 0, j = a.length - 1; i < temp.length; i++, j--) {
+            temp[i] = a[j];
+        }
+
+        return temp;
+    }
+
     //dynamic space allocation
     //generic method
     public static <T> T[] dynamicAlloc(T[] collection) {
