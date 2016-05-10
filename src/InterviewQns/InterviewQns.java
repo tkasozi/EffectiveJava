@@ -5,9 +5,6 @@
  */
 package InterviewQns;
 
-import AlgorithmTests.Stopwatch;
-import java.util.Objects;
-
 /**
  *
  * @author tkasozi
@@ -118,6 +115,8 @@ public class InterviewQns {
         return (array.length - 1 == i) ? array[i] : array[i] ^ onlyOnce2(array, ++i);
     }
 
+    //O(1)
+    //0 bytes
     public static void scale(int[] args, int scale, int pos) {
         args[pos] *= scale;
     }
