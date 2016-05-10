@@ -154,7 +154,7 @@ public class InterviewQns {
     }
 
     //multiply/scale by the largest element of the array
-    //O(n^2)
+    //O(2n)
     public static void multi(int[] args) {
         int largest = 0;
         for (int i = 0; i < args.length; i++) {
