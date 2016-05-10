@@ -6,7 +6,6 @@
 package InterviewQns;
 
 import AlgorithmTests.Stopwatch;
-import DataStructures.BinaryTree;
 import java.util.Objects;
 
 /**
@@ -32,13 +31,13 @@ public class InterviewQns {
     //Find the  First non repeated character
     //May 9, 2016
     public static char firstNonRepeatChar(String str) {
-        int hexc = (int) str.charAt(0);
+        //int hexc = (int) str.charAt(0);
         char result = 0;
 
-//        //only one non repeating character ie. firstNonRepeatChar("bffhhellooss")  =  e
-//        for (int i = 0; i < str.length(); i++) {
-//            hexc ^= (int) str.charAt(i);
-//        }
+        //only one non repeating character ie. firstNonRepeatChar("bffhhellooss")  =  e
+        //for (int i = 0; i < str.length(); i++) {
+        //    hexc ^= (int) str.charAt(i);
+        //}
         for (int i = 0; i < str.length(); i++) {
             char temp = result = str.charAt(i);
             int count = 0;
