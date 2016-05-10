@@ -22,7 +22,7 @@ public class InterviewQns {
 
         watch = new Stopwatch();
 
-        System.out.println("" + firstNonRepeatChar("cbffhhelloossc"));
+        System.out.println("" + firstNonRepeatChar("bbffhhelloossc"));
 
         System.out.println(" " + watch.elapsedTime());
     }
@@ -39,11 +39,11 @@ public class InterviewQns {
         //    hexc ^= (int) str.charAt(i);
         //}
         for (int i = 0; i < str.length(); i++) {
-            char temp = result = str.charAt(i);
+            result = str.charAt(i);
             int count = 0;
 
             for (int x = 0; x < str.length(); x++) {
-                count += (temp == str.charAt(x)) ?  1 : 0;
+                count += (str.charAt(i) == str.charAt(x)) ?  1 : 0;
             }
             if (count == 1) {
                 break;
