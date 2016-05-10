@@ -22,7 +22,7 @@ public class InterviewQns {
 
         watch = new Stopwatch();
 
-        System.out.println("" + firstNonRepeatChar("bffhhellooss"));
+        System.out.println("" + firstNonRepeatChar("cbffhhelloossc"));
 
         System.out.println(" " + watch.elapsedTime());
     }
@@ -43,7 +43,7 @@ public class InterviewQns {
             int count = 0;
 
             for (int x = 0; x < str.length(); x++) {
-                count += (temp == str.charAt(x)) ? count + 1 : 0;
+                count += (temp == str.charAt(x)) ?  1 : 0;
             }
             if (count == 1) {
                 break;
