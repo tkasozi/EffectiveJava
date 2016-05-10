@@ -14,20 +14,8 @@ import java.util.Objects;
  */
 public class InterviewQns {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Stopwatch watch;
-
-        watch = new Stopwatch();
-
-        System.out.println("" + firstNonRepeatChar("bbffhhelloossc"));
-
-        System.out.println(" " + watch.elapsedTime());
-    }
-
     //O(n^2)
+    //10 bytes
     //Find the  First non repeated character
     //May 9, 2016
     public static char firstNonRepeatChar(String str) {
@@ -43,7 +31,7 @@ public class InterviewQns {
             int count = 0;
 
             for (int x = 0; x < str.length(); x++) {
-                count += (str.charAt(i) == str.charAt(x)) ?  1 : 0;
+                count += (str.charAt(i) == str.charAt(x)) ? 1 : 0;
             }
             if (count == 1) {
                 break;
@@ -55,6 +43,8 @@ public class InterviewQns {
     }
 
     //O(n) reverse array
+    //given: int[] a
+    //4 bytes * (1 + a.length)
     static int[] reverse(int[] a) {
         int[] temp = new int[a.length];
 
@@ -63,20 +53,6 @@ public class InterviewQns {
         }
 
         return temp;
-    }
-
-    //dynamic space allocation
-    //generic method
-    public static <T> T[] dynamicAlloc(T[] collection) {
-        Objects[] temp;
-
-        temp = new Objects[collection.length + 1];
-
-        for (int i = collection.length - 1; i >= 0; i--) {
-//            temp[i + 1] = (Objects) collection[i];
-        }
-
-        return (T[]) temp;
     }
 
     //bigInt helper function
@@ -136,6 +112,7 @@ public class InterviewQns {
         return h;
     }
 
+    //O(n)
     //0 bytes
     static public int onlyOnce2(int[] array, int i) {
         return (array.length - 1 == i) ? array[i] : array[i] ^ onlyOnce2(array, ++i);
@@ -145,6 +122,8 @@ public class InterviewQns {
         args[pos] *= scale;
     }
 
+    //O(n)
+    //4 bytes
     public static int largest(int[] args) {
         int largest = 0;
         for (int i = 0; i < args.length; i++) {
@@ -155,6 +134,7 @@ public class InterviewQns {
 
     //multiply/scale by the largest element of the array
     //O(2n)
+    //4 bytes
     public static void multi(int[] args) {
         int largest = 0;
         for (int i = 0; i < args.length; i++) {

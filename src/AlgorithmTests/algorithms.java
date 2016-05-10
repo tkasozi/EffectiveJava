@@ -5,6 +5,7 @@
 package AlgorithmTests;
 
 import DataStructures.BinaryTree;
+import static InterviewQns.InterviewQns.firstNonRepeatChar;
 import java.util.Iterator;
 
 /**
@@ -26,11 +27,12 @@ public class algorithms {
         binaryTree.insert(6);
         binaryTree.insert(7);
 
-//        for (Integer T : binaryTree) {
-//            System.out.print(T + " ");
-//        }
-        for (Iterator it = binaryTree.iterator(); it.hasNext();) {
-            System.out.print(it.next() + " ");
-        }
+        Stopwatch watch;
+
+        watch = new Stopwatch();
+
+        System.out.println("" + firstNonRepeatChar("bbffhhelloossc"));
+
+        System.out.println(" " + watch.elapsedTime());
     }
 }
