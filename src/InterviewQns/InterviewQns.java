@@ -79,6 +79,7 @@ public class InterviewQns {
         return (T[]) temp;
     }
 
+    //bigInt helper function
     public static void addColumn(int[] args, int[] carryArray, int posC, int posA) {
         if (largest(carryArray) == 0) {
             //done going through the smallest number of the two.
@@ -94,6 +95,8 @@ public class InterviewQns {
         }
     }
 
+    //To add large Integers ie. bigInt(120012023, 1200) = 20013223
+    //using the helper function above addColumn(...)
     public static int[] bigInt(int[] args, int add) {
         int[] carryArray;
         String tempCarry = Integer.toString(add);
