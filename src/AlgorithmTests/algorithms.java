@@ -5,7 +5,7 @@
 package AlgorithmTests;
 
 import DataStructures.BinaryTree;
-import java.util.Arrays;
+import java.util.Iterator;
 
 /**
  *
@@ -23,11 +23,14 @@ public class algorithms {
         binaryTree.insert(5);
         binaryTree.insert(2);
         binaryTree.insert(3);
+        binaryTree.insert(6);
+        binaryTree.insert(7);
 
-        //binaryTree.traverse(binaryTree, true);
-        //binaryTree.print();
-        for (Integer T : binaryTree) {
-            System.out.print(T + " ");
+//        for (Integer T : binaryTree) {
+//            System.out.print(T + " ");
+//        }
+        for (Iterator it = binaryTree.iterator(); it.hasNext();) {
+            System.out.print(it.next() + " ");
         }
     }
 }

@@ -115,7 +115,9 @@ public class BinaryTree<T extends Comparable<T>> implements Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return new TreeIterator(this);
+        TreeIterator<T> l = new TreeIterator(this);
+
+        return (!l.hasNext()) ? new TreeIterator(this.rightBranch) : l;
     }
 
     public class TreeIterator<T extends Comparable<T>> implements Iterator<T> {

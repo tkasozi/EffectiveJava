@@ -6,6 +6,7 @@
 package InterviewQns;
 
 import AlgorithmTests.Stopwatch;
+import DataStructures.BinaryTree;
 import java.util.Objects;
 
 /**
@@ -19,7 +20,39 @@ public class InterviewQns {
      */
     public static void main(String[] args) {
         Stopwatch watch;
+
         watch = new Stopwatch();
+
+        System.out.println("" + firstNonRepeatChar("bffhhellooss"));
+
+        System.out.println(" " + watch.elapsedTime());
+    }
+
+    //O(n^2)
+    //Find the  First non repeated character
+    //May 9, 2016
+    public static char firstNonRepeatChar(String str) {
+        int hexc = (int) str.charAt(0);
+        char result = 0;
+
+//        //only one non repeating character ie. firstNonRepeatChar("bffhhellooss")  =  e
+//        for (int i = 0; i < str.length(); i++) {
+//            hexc ^= (int) str.charAt(i);
+//        }
+        for (int i = 0; i < str.length(); i++) {
+            char temp = result = str.charAt(i);
+            int count = 0;
+
+            for (int x = 0; x < str.length(); x++) {
+                count += (temp == str.charAt(x)) ? count + 1 : 0;
+            }
+            if (count == 1) {
+                break;
+            }
+        }
+
+        return result;
+        //return (char) hexc;
     }
 
     //O(n) reverse array
@@ -91,8 +124,8 @@ public class InterviewQns {
     }
 
     //O(n)
-    //Find the one number that repeats.. Garantee only one
-    //0 bytes used
+    //Find the one number that doesn't repeat.. Garantee only one
+    //4 bytes used
     public static int onlyOnce(int[] args) {
         int h = 0;
         for (int i = 0; i < args.length; i++) {
@@ -101,6 +134,7 @@ public class InterviewQns {
         return h;
     }
 
+    //0 bytes
     static public int onlyOnce2(int[] array, int i) {
         return (array.length - 1 == i) ? array[i] : array[i] ^ onlyOnce2(array, ++i);
     }
